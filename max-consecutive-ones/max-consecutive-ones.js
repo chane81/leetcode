@@ -3,7 +3,6 @@
  * @return {number}
  */
 var findMaxConsecutiveOnes = function(nums) {
-    const stack = [];
     let res = 0;
     let cnt = 0;
     
@@ -14,7 +13,7 @@ var findMaxConsecutiveOnes = function(nums) {
         } else {
             cnt = 0;
         }
-    };
+    }
     
     return res;
 };
