@@ -3,6 +3,7 @@
  * @return {number}
  */
 var minMoves2 = function(nums) {
+    /**
     const len = nums.length;
     
     const arrCalc = [];
@@ -22,4 +23,12 @@ var minMoves2 = function(nums) {
     }
 
     return arrCalc.sort((a, b) => a - b)[0];
+    */
+    nums.sort((a, b) => a - b);
+    const middle = nums.length >> 1;
+    const target = nums[middle];
+    
+    return nums.reduce((result, num) => {
+       return result + Math.abs(num - target) ;
+    }, 0)
 };
