@@ -20,7 +20,6 @@ var minMoves2 = function(nums) {
         
         arrCalc.push(calc);
     }
-    
-    // console.log('res', stNum, arrCalc);
+
     return arrCalc.sort((a, b) => a - b)[0];
 };
