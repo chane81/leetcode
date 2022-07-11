@@ -2,7 +2,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var isHappy = function(n) {
+var isHappy = function(n, hashMap = {}) {
     // 1. input num을 toString() 변환
     // 2. for 문으로 각 숫자를 돌면서 제곱 구해서 sum
     // 3. sum 한 값을 재귀호출
@@ -21,18 +21,23 @@ var isHappy = function(n) {
     // 64 + 25 = 89
     // 64 + 81 = 145
     
-     if (n === 1 || n === 7)
+    if (n === 1) {
         return true;
+    }
     
-    if (n > 9) {
-        while (n.toString().length > 1) {
-            n = n.toString().split(``).reduce((p, x) => p + (x ** 2), 0);
-            
-            if (parseInt(n) === 1)
-                return true;
-        }
-        const x = parseInt(n);
-        return x === 1 || x === 7;
-    } else return false;
+    const arr = n.toString().split('');
+    let sum = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i] * arr[i];
+    };
+    
+    if (!hashMap[sum]) {
+        hashMap[sum] = sum;   
+    } else {
+        return false
+    }
+    
+    return isHappy(sum, hashMap);
     
 };
