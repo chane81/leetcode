@@ -3,10 +3,11 @@
  * @return {number[]}
  */
 var spiralOrder = function(matrix) {
-    // rows 갯수 구하기
-    // cols 갯수 구하기
-    // 0부터 cols length까지 진행
-    // cols length 에 도달하면 rows length 까지 진행
+    // 각 4면에 해당하는 값을 가져오기
+    // 1면(위): matrix shift
+    // 2면(오른): matrix map pop
+    // 3면(아래): matrix pop reverse
+    // 4면(왼): matrix map shift
     
     /*
     1  2  3  4
