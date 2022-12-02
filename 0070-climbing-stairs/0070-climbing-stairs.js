@@ -11,7 +11,7 @@ var climbStairs = function(n) {
 
     // s = f(n - 1) + f(n - 2)
 
-    console.log('n', n, arr[n]);
+    // console.log('n', n, arr[n]);
 
     if (n === 1) return 1;
     if (n === 2) return 2;
